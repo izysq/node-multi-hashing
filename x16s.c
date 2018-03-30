@@ -93,8 +93,9 @@ static void getAlgoString(const uint32_t* prevblock, char *output)
 // X16S CPU Hash (Validation)
 void x16s_hash(void *output, const void *input)
 {
-	unsigned char _ALIGN(64) hash[128];
-
+	//unsigned char _ALIGN(64) hash[128];
+	uint32_t hash[64/4];
+	
 	sph_blake512_context ctx_blake;
 	sph_bmw512_context ctx_bmw;
 	sph_groestl512_context ctx_groestl;
