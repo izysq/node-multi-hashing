@@ -68,7 +68,7 @@ static const char* algo_strings[] = {
 };
 
 static __thread uint32_t s_ntime = UINT32_MAX;
-static __thread bool s_implemented = false;
+//static __thread bool s_implemented = false;
 static __thread char hashOrder[HASH_FUNC_COUNT + 1] = { 0 };
 
 static void getAlgoString(const uint32_t* prevblock, char *output)
