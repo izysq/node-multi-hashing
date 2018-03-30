@@ -25,7 +25,7 @@
 #include "sha3/sph_whirlpool.h"
 #include "sha3/sph_sha2.h"
 
-static uint32_t *d_hash[MAX_GPUS];
+//static uint32_t *d_hash[MAX_GPUS];
 
 enum Algo {
 	BLAKE = 0,
