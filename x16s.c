@@ -8,26 +8,22 @@
 #include <memory.h>
 #include <unistd.h>
 
-extern "C" {
-#include "sph/sph_blake.h"
-#include "sph/sph_bmw.h"
-#include "sph/sph_groestl.h"
-#include "sph/sph_skein.h"
-#include "sph/sph_jh.h"
-#include "sph/sph_keccak.h"
-
-#include "sph/sph_luffa.h"
-#include "sph/sph_cubehash.h"
-#include "sph/sph_shavite.h"
-#include "sph/sph_simd.h"
-#include "sph/sph_echo.h"
-
-#include "sph/sph_hamsi.h"
-#include "sph/sph_fugue.h"
-#include "sph/sph_shabal.h"
-#include "sph/sph_whirlpool.h"
-#include "sph/sph_sha2.h"
-}
+#include "sha3/sph_blake.h"
+#include "sha3/sph_bmw.h"
+#include "sha3/sph_groestl.h"
+#include "sha3/sph_jh.h"
+#include "sha3/sph_keccak.h"
+#include "sha3/sph_skein.h"
+#include "sha3/sph_luffa.h"
+#include "sha3/sph_cubehash.h"
+#include "sha3/sph_shavite.h"
+#include "sha3/sph_simd.h"
+#include "sha3/sph_echo.h"
+#include "sha3/sph_hamsi.h"
+#include "sha3/sph_fugue.h"
+#include "sha3/sph_shabal.h"
+#include "sha3/sph_whirlpool.h"
+#include "sha3/sph_sha2.h"
 
 static uint32_t *d_hash[MAX_GPUS];
 
@@ -95,7 +91,7 @@ static void getAlgoString(const uint32_t* prevblock, char *output)
 }
 
 // X16S CPU Hash (Validation)
-extern "C" void x16s_hash(void *output, const void *input)
+void x16s_hash(void *output, const void *input)
 {
 	unsigned char _ALIGN(64) hash[128];
 
